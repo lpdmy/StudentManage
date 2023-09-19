@@ -49,13 +49,10 @@ public class StudentManager{
  public void generateReport() {
         Map<String, Integer> courseCounts = new HashMap<>();
 
-        // Count the number of courses for each student
         for (Student student : list) {           
-            // Increment the count for the current student and course
             courseCounts.put(student.getStudentName() + "|" + student.getCourseName(), courseCounts.getOrDefault(student.getStudentName() + "|" + student.getCourseName(), 0) + 1);
         }
 
-        // Generate the report by iterating over the map and printing the results
         for (Map.Entry<String, Integer> entry : courseCounts.entrySet()) {
             String[] parts = entry.getKey().split("\\|");
             String name = parts[0];
